@@ -2,10 +2,10 @@
 
 
 void echo() {
-  char input[16];
+  char buff[16];
   printf("Echo: ");
-  gets(input); //get some input from stdin
-  puts(input); //echo it back
+  gets(buff); //get some input from stdin
+  puts(buff); //echo it back
 }
 
 

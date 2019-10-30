@@ -1,20 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void give_shell() {
-  system("/bin/sh");
-}
-
 void echo() {
-  char buffer[16];
+  char buffer[128];
+  printf("I'm going to store your data at %p\n", &buffer);
   printf("Echo: ");
   gets(buffer); //get some input from stdin
   puts(buffer); //echo it to stdout
 }
 
 int main() {
-  printf("By the way, give_shell is at %p\n", &give_shell);
-  
   while(true) {
     echo();
   }

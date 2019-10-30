@@ -20,15 +20,28 @@ Because we are overflowing the buffer:
 
 echo0 allocates 16 bytes on the stack to store our input.
 
-fgets is INCREDIBLY INSECURE because it reads and writes input until it encounters a newline
+gets is INCREDIBLY INSECURE because it reads and writes input until it encounters a newline
 New input methods require a max length and will null terminate the array.
 
-`make echo0`
+```bash
+rm echo0
+make echo0
+```
 Notice the compiler warnings
 
 ## Exploiting
 
-We can overwrite the return address, but how does that help us?
+How is this exploitable?
+
+### The stack
+
+![](https://miro.medium.com/max/578/1*Io2pbNYn8PeJCpSdNK8O8w.jpeg)
+
+If we continue writing into buffer, eventually we will be overwriting the return address...
+
+How does that help us?
+
+### Returning to an existing function
 
 `vim echo1.cpp`
 
