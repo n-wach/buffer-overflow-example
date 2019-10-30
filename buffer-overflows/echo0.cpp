@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void echo() {
   char buff[16];
   printf("Echo: ");

